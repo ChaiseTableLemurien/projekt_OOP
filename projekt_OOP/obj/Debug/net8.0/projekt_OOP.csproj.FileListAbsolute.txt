@@ -1,0 +1,14 @@
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\bin\Debug\net8.0\projekt_OOP.exe
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\bin\Debug\net8.0\projekt_OOP.deps.json
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\bin\Debug\net8.0\projekt_OOP.runtimeconfig.json
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\bin\Debug\net8.0\projekt_OOP.dll
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\bin\Debug\net8.0\projekt_OOP.pdb
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.AssemblyInfoInputs.cache
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.AssemblyInfo.cs
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.csproj.CoreCompileInputs.cache
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.dll
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\refint\projekt_OOP.dll
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.pdb
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\projekt_OOP.genruntimeconfig.cache
+C:\Users\Lemur\Desktop\projekt_OOP\projekt_OOP\projekt_OOP\obj\Debug\net8.0\ref\projekt_OOP.dll
