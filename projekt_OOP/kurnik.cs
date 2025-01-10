@@ -8,9 +8,9 @@ namespace projekt_OOP
 {
     internal class kurnik
     {
-        int ID;
-        string Name;
-        string localization;
+        public int ID;
+        public string Name;
+        public string localization;
         public List<Kura> Kury { get; private set; } = new List<Kura>();
 
 

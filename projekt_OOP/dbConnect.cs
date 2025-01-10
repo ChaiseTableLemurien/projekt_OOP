@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -9,26 +10,74 @@ namespace projekt_OOP
 {
     public class dbConnect
     {
-        private string ConnectionString;
+        private string ConnectionString = "Server=localhost;Database=kurnik_test;User ID=root;Password=''";
+        private MySqlConnection connection;
 
-        public dbConnect(string server, string database, string user, string password)
+        public dbConnect()
         {
-            ConnectionString = $"Server={server};Database={database};User ID={user};Password={password};";
         }
 
-        public MySqlConnection GetConnection()
+        public MySqlConnection CreateConnection()
         {
             try
             {
-                var connection = new MySqlConnection(ConnectionString);
+                connection = new MySqlConnection(ConnectionString);
                 connection.Open();
-                Console.WriteLine("Udało się połączyć z bazą danych :)");
+                //Console.WriteLine("\nNawiązano połączenie z bazą danych\n");
                 return connection;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Błąd połączenia z bazą danych: {ex.Message}");
                 throw;
+            }
+        }
+
+        public void CloseConnection()
+        {
+            connection.Close();
+            //Console.WriteLine("\nZakończono połączenie z bazą danych\n");
+        }
+        
+        public void Select()
+        {
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM kury;";
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                // Wypisanie wszystkich kolumn w jednym wierszu. 
+                // Możesz dostosować to do swoich potrzeb, np. wypisując tylko wybrane kolumny.
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    Console.Write($"{reader.GetName(i)}: {reader[i]} | ");
+                }
+                Console.WriteLine(); // Nowa linia po każdym wierszu
+            }
+            reader.Close();
+        }
+
+        public void InsertKura(Kura kura, int id_kurnik)
+        {
+            using (MySqlCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = "INSERT INTO kury(id_kurnik, plec, zniesione_jaja, waga) VALUES (@id_kurnik, @plec, @zniesione_jaja, @waga)";
+                cmd.Parameters.AddWithValue("@id_kurnik", id_kurnik);
+                cmd.Parameters.AddWithValue("@plec", kura.gender);
+                cmd.Parameters.AddWithValue("@zniesione_jaja", kura.eggs_laid);
+                cmd.Parameters.AddWithValue("@waga", kura.weight);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteKura(int id_kura)
+        {
+            using (MySqlCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = "DELETE FROM kury WHERE id_kury = @id_kura";
+                cmd.Parameters.AddWithValue("@id_kura", id_kura);
+                cmd.ExecuteNonQuery();
             }
         }
     }
