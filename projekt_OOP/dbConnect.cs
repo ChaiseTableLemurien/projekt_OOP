@@ -80,5 +80,26 @@ namespace projekt_OOP
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void InsertKurnik(kurnik kurnik)
+        {
+            using (MySqlCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = "INSERT INTO kurniki(lokalizacja, nazwa) VALUES (@lokalizacja, @nazwa)";
+                cmd.Parameters.AddWithValue("@lokalizacja", kurnik.Localization);
+                cmd.Parameters.AddWithValue("@nazwa", kurnik.Name);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteKurnik(int id_kurnik)
+        {
+            using (MySqlCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = "DELETE FROM kurniki WHERE id_kurnik = @id_kurnik";
+                cmd.Parameters.AddWithValue("@id_kurnik", id_kurnik);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

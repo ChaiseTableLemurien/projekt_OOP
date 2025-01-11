@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace projekt_OOP
 {
-    internal class kurnik
+    public class kurnik
     {
         public int ID;
         public string Name;
-        public string localization;
+        public string Localization;
         public List<Kura> Kury { get; private set; } = new List<Kura>();
 
 
-        public kurnik(string name)
+        public kurnik(string name, string localization)
         {
             Name = name;
+            Localization = localization;
         }
         public void DodajKure(Kura kura)
         {

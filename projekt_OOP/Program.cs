@@ -3,6 +3,7 @@ using Mysqlx.Session;
 using Org.BouncyCastle.Crypto.Digests;
 using projekt_OOP;
 using System;
+using System.Threading.Channels;
 
 static void Main()
 {
@@ -193,17 +194,68 @@ static void EditHen()
 
 static void AddCoop()
 {
+    string nazwa;
+    string lokalizacja;
+    Console.WriteLine("Podaj nazwę dla nowego kurnika: ");
+    nazwa = Console.ReadLine();
+    Console.WriteLine("Podaj miasto w którym znajduje się kurnik: ");
+    lokalizacja = Console.ReadLine();
+
+
+    kurnik temp_kurnik = new kurnik(nazwa, lokalizacja);
+
+    dbConnect con = new dbConnect();
+    con.CreateConnection();
+    con.InsertKurnik(temp_kurnik);
+    con.CloseConnection();
+
     Console.WriteLine("╔══════════════════════╗");
-    Console.WriteLine("║ Dodawanie kurnika... ║");
+    Console.WriteLine("║ Dodano kurnik...     ║");
     Console.WriteLine("╚══════════════════════╝");
     // Tutaj możesz dodać logikę dodawania kurnika do bazy danych
 }
 
 static void RemoveCoop()
 {
-    Console.WriteLine("╔═════════════════════╗");
-    Console.WriteLine("║ Usuwanie kurnika... ║");
-    Console.WriteLine("╚═════════════════════╝");
+    int id_kurnik;
+    string confirm;
+    string confirm2;
+
+    Console.WriteLine("Aby usunąć kurnik, napierw upewnij się że masz jego ID");
+    Console.WriteLine("Pamiętaj też o tym, że jeśli usuniesz kurnik to wraz z kurami do niego przypisanymi!");
+    Console.WriteLine("Czy chcesz kontynuować? ");
+    Console.WriteLine("Y/N?");
+    confirm2 = Console.ReadLine();
+
+    if (confirm2 == "n" || confirm2 == "N")
+    {
+        return;
+    }
+
+    Console.WriteLine("Podaj ID kurnika do usunięcia: ");
+    id_kurnik = Int32.Parse(Console.ReadLine());
+
+    Console.WriteLine($"Czy napewno chcesz usunąć kurnik o ID {id_kurnik} ?");
+    Console.WriteLine("Y/N?");
+    confirm = Console.ReadLine();
+    if (confirm == "y" || confirm == "Y")
+    {
+        dbConnect con = new dbConnect();
+        con.CreateConnection();
+        con.DeleteKurnik(id_kurnik);
+        con.CloseConnection();
+
+        Console.WriteLine("╔═════════════════════╗");
+        Console.WriteLine("║ Usunięto kurnik...  ║");
+        Console.WriteLine("╚═════════════════════╝");
+    }
+    else
+    {
+        return;
+    }
+
+
+
     // Tutaj możesz dodać logikę usuwania kurnika z bazy danych
 }
 
