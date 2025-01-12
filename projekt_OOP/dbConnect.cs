@@ -58,6 +58,23 @@ namespace projekt_OOP
             reader.Close();
         }
 
+        public void SelectByID(int id)
+        {
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = $"SELECT * FROM kury WHERE kury.id_kury LIKE {id};";
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    Console.Write($"{reader.GetName(i)}: {reader[i]} | ");
+                }
+                Console.WriteLine(); // Nowa linia po każdym wierszu
+            }
+            reader.Close();
+        }
+
         public void InsertKura(Kura kura, int id_kurnik)
         {
             using (MySqlCommand cmd = connection.CreateCommand())
@@ -100,6 +117,11 @@ namespace projekt_OOP
                 cmd.Parameters.AddWithValue("@id_kurnik", id_kurnik);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public void UpdateKura(int id_kura)
+        {
+
         }
     }
 }

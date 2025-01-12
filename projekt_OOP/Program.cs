@@ -186,10 +186,65 @@ static void RemoveHen()
 
 static void EditHen()
 {
-    Console.WriteLine("╔═══════════════════╗");
-    Console.WriteLine("║ Edycja kury...    ║");
-    Console.WriteLine("╚═══════════════════╝");
-    // Tutaj możesz dodać logikę usuwania kury z bazy danych
+    int id_kury;
+    int choice;
+    bool continueRunning = true;
+    Console.WriteLine("Podaj ID kury której parametry chcesz zmienić: ");
+    id_kury = int.Parse(Console.ReadLine());
+
+    dbConnect con = new dbConnect();
+    con.CreateConnection();
+    con.SelectByID(id_kury);
+    con.CloseConnection();
+
+
+
+    while (continueRunning)
+    {
+        Console.Clear();
+        Console.WriteLine("╔══════════════════════════════╗");
+        Console.WriteLine("║ Edycja kury...               ║");
+        Console.WriteLine("║══════════════════════════════║");
+        Console.WriteLine("║Który parametr chcesz zmienić?║");
+        Console.WriteLine("║1. ID kurnika                 ║");
+        Console.WriteLine("║2. Płeć kury (niezalecane)    ║");
+        Console.WriteLine("║3. Liczba zniesionych jaj     ║");
+        Console.WriteLine("║4. Waga kury                  ║");
+        Console.WriteLine("║5. Zakończ                    ║");
+        Console.WriteLine("╚══════════════════════════════╝");
+        con.CreateConnection();
+        con.SelectByID(id_kury);
+        con.CloseConnection();
+        choice = Int32.Parse(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                {
+                    break;
+                }
+            case 2:
+                {
+                    break;
+                }
+            case 3:
+                {
+                    break;
+                }
+            case 4:
+                {
+                    break;
+                }
+            case 5:
+                {
+                    continueRunning = false;
+                    break;
+                }
+
+
+
+        }
+    }
 }
 
 static void AddCoop()
