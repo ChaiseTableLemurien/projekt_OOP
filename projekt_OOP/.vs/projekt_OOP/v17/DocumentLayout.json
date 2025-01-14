@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\kurnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:kurnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\kura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:kura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\kurnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:kurnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|c:\\users\\lemur\\desktop\\projekt_oop\\projekt_oop\\projekt_oop\\kura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F156D46B-8420-4707-BC82-933F5BF986FD}|projekt_OOP.csproj|solutionrelative:kura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "kurnik.cs",
               "DocumentMoniker": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\kurnik.cs",
               "RelativeDocumentMoniker": "kurnik.cs",
               "ToolTip": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\kurnik.cs",
               "RelativeToolTip": "kurnik.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T09:51:37.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T09:51:37.309Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "kura.cs",
               "DocumentMoniker": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\kura.cs",
               "RelativeDocumentMoniker": "kura.cs",
@@ -51,31 +50,30 @@
               "RelativeToolTip": "kura.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T09:25:18.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T09:25:18.645Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "dbConnect.cs",
               "DocumentMoniker": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\dbConnect.cs",
               "RelativeDocumentMoniker": "dbConnect.cs",
               "ToolTip": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\dbConnect.cs",
               "RelativeToolTip": "dbConnect.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAHkAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwHkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-09T11:24:05.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Lemur\\Desktop\\projekt_OOP\\projekt_OOP\\projekt_OOP\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANQAAAAAAAAAAAAAAC4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-09T09:08:08.134Z",
               "EditorCaption": ""

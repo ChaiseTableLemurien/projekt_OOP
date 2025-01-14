@@ -4,6 +4,7 @@ using Org.BouncyCastle.Crypto.Digests;
 using projekt_OOP;
 using System;
 using System.Threading.Channels;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 static void Main()
 {
@@ -221,18 +222,77 @@ static void EditHen()
         {
             case 1:
                 {
+                    int new_id;
+                    string query;
+                    Console.WriteLine("Podaj nowe ID kurnika: ");
+                    new_id = Int32.Parse(Console.ReadLine());
+                    query = $"UPDATE kury SET kury.id_kurnik = {new_id} WHERE kury.id_kury LIKE {id_kury}";
+                    
+
+                    con.CreateConnection();
+                    con.UpdateKura(query);
+                    con.CloseConnection();
                     break;
                 }
             case 2:
                 {
+                    Console.WriteLine("aktualnie funkcja nie dostępna, przepraszam");
+                    Thread.Sleep(2000);
+                    //string new_gender;
+                    //string query;
+                    //Console.WriteLine("Wpisz nową płeć dla kury: (wpisz kura lub kogut");
+                    //string verify = Console.ReadLine();
+                    //if (verify == "kura" || verify == "kogut")
+                    //{
+                    //    new_gender = verify;
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Ups, podałeś złą wartość, zacznij od nowa");
+                    //    return;
+                    //}
+                    //query = $"UPDATE kury SET kury.plec = {new_gender} WHERE kury.id_kury LIKE {id_kury}";
+                    //con.CreateConnection();
+                    //con.UpdateKura(query);
+                    //con.CloseConnection();
+
                     break;
                 }
             case 3:
                 {
+
+                    int? new_eggs;
+                    string query;
+                    Console.WriteLine("Podaj nową ilość zniesionych jaj: (aby ustawić wartość NULL, wciśnij enter) ");
+
+                    string input = Console.ReadLine();
+                    if (int.TryParse(input, out int parsedValue))
+                    {
+                        new_eggs = parsedValue;
+                        query = $"UPDATE kury SET kury.zniesione_jaja = {new_eggs} WHERE kury.id_kury LIKE {id_kury}";
+                    }
+                    else
+                    {
+                        new_eggs = null;
+                        query = $"UPDATE kury SET kury.zniesione_jaja = NULL WHERE kury.id_kury LIKE {id_kury}";
+                    }
+
+                    con.CreateConnection();
+                    con.UpdateKura(query);
+                    con.CloseConnection();
                     break;
                 }
             case 4:
                 {
+                    double new_weight;
+                    string query;
+                    Console.WriteLine("Podaj nową wagę kury: ( w formacie 1,5   2,5 itd.");
+                    new_weight = double.Parse(Console.ReadLine());
+                    query = $"UPDATE kury SET kury.waga = {new_weight} WHERE kury.id_kury LIKE {id_kury}";
+
+                    con.CreateConnection();
+                    con.UpdateKura(query);
+                    con.CloseConnection();
                     break;
                 }
             case 5:

@@ -119,9 +119,13 @@ namespace projekt_OOP
             }
         }
 
-        public void UpdateKura(int id_kura)
+        public void UpdateKura(string query)
         {
-
+            using (MySqlCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery ();
+            }
         }
     }
 }
