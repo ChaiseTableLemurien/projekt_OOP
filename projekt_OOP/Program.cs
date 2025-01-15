@@ -83,6 +83,8 @@ static void Main()
 
 static void AddHen()
 {
+    //Dodawanie kury do bazy danych
+
     string gndr;
     int age;
     double weight;
@@ -138,6 +140,7 @@ static void AddHen()
 
 static void RemoveHen()
 {
+    // Usuwanie kury z bazy danych
     string confirm;
     string confirm2;
     int id_kura;
@@ -172,14 +175,12 @@ static void RemoveHen()
     {
         return ;
     }
-
-
- 
-    // Tutaj możesz dodać logikę usuwania kury z bazy danych
 }
 
 static void EditHen()
 {
+    // Modyfikacja kury w bazie danych
+
     int id_kury;
     int choice;
     bool continueRunning = true;
@@ -190,8 +191,6 @@ static void EditHen()
     con.CreateConnection();
     con.SelectByID(id_kury);
     con.CloseConnection();
-
-
 
     while (continueRunning)
     {
@@ -298,6 +297,8 @@ static void EditHen()
 
 static void AddCoop()
 {
+    // Dodawanie kurnika do bazy danych
+
     string nazwa;
     string lokalizacja;
     Console.WriteLine("Podaj nazwę dla nowego kurnika: ");
@@ -322,7 +323,6 @@ static void AddCoop()
         Console.WriteLine("╔══════════════════════╗");
         Console.WriteLine("║ Dodano kurnik...     ║");
         Console.WriteLine("╚══════════════════════╝");
-        // Tutaj możesz dodać logikę dodawania kurnika do bazy danych
     }
 
 
@@ -330,6 +330,8 @@ static void AddCoop()
 
 static void RemoveCoop()
 {
+    //Usuwanie kurnika z bazy danych
+
     int id_kurnik;
     string confirm;
     string confirm2;
@@ -366,14 +368,11 @@ static void RemoveCoop()
     {
         return;
     }
-
-
-
-    // Tutaj możesz dodać logikę usuwania kurnika z bazy danych
 }
 
 static void Search()
 {
+    // Wyświetlanie danych z bazy
     dbConnect con = new dbConnect();
     con.CreateConnection();
 
@@ -385,7 +384,6 @@ static void Search()
     con.Select();
 
     con.CloseConnection();
-    // Tutaj możesz dodać logikę wyszukiwania danych w bazie danych
 }
 
 Main();
