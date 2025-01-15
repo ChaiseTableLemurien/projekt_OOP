@@ -8,82 +8,75 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 static void Main()
 {
-    //Kura cziken1 = new Kura(1, "Kogut", 2, 2.5, null);
-
-    //Kura cziken2 = new Kura(1, "pisklę", 1, 0.2, null);
-
-    //cziken1.showChicken();
-
-
-    //kurnik kurnik = new kurnik("Kurnik 1");
-
-    //kurnik.DodajKure(cziken1);
-    //kurnik.DodajKure(cziken2);
-
-    //kurnik.WypiszKury();
-
-    //Console.WriteLine("");
-
-
-
-
 
     bool continueRunning = true;
 
     while (continueRunning)
     {
-        Console.Clear(); // Czyszczenie konsoli przed każdym wyświetleniem menu
-        Console.WriteLine("╔═══════════════════════════════╗");
-        Console.WriteLine("║           Menu Główne         ║");
-        Console.WriteLine("╠═══════════════════════════════╣");
-        Console.WriteLine("║ 1. Dodaj kurę                 ║");
-        Console.WriteLine("║ 2. Usuń kurę                  ║");
-        Console.WriteLine("║ 3. Edytuj kurę                ║");
-        Console.WriteLine("║ 4. Dodaj kurnik               ║");
-        Console.WriteLine("║ 5. Usuń kurnik                ║");
-        Console.WriteLine("║ 6. Wyszukaj dane              ║");
-        Console.WriteLine("║ 7. Zakończ                    ║");
-        Console.WriteLine("╚═══════════════════════════════╝");
-
-        string choice = Console.ReadLine();
-
-        switch (choice)
+        try 
         {
-            case "1":
-                AddHen();
-                break;
-            case "2":
-                RemoveHen();
-                break;
-            case "3":
-                EditHen();
-                break;
-            case "4":
-                AddCoop();
-                break;
-            case "5":
-                RemoveCoop();
-                break;
-            case "6":
-                Search();
-                break;
-            case "7":
-                continueRunning = false;
-                Console.WriteLine("╔═══════════════════════╗");
-                Console.WriteLine("║ Zamykanie programu... ║");
-                Console.WriteLine("╚═══════════════════════╝");
-                break;
-            default:
-                Console.WriteLine("╔═══════════════════════════════════╗");
-                Console.WriteLine("║ Nieznana opcja. Wybierz ponownie. ║");
-                Console.WriteLine("╚═══════════════════════════════════╝");
-                break;
+
+       
+            Console.Clear(); // Czyszczenie konsoli przed każdym wyświetleniem menu
+            Console.WriteLine("╔═══════════════════════════════╗");
+            Console.WriteLine("║           Menu Główne         ║");
+            Console.WriteLine("╠═══════════════════════════════╣");
+            Console.WriteLine("║ 1. Dodaj kurę                 ║");
+            Console.WriteLine("║ 2. Usuń kurę                  ║");
+            Console.WriteLine("║ 3. Edytuj kurę                ║");
+            Console.WriteLine("║ 4. Dodaj kurnik               ║");
+            Console.WriteLine("║ 5. Usuń kurnik                ║");
+            Console.WriteLine("║ 6. Wyświetl dane              ║");
+            Console.WriteLine("║ 7. Zakończ                    ║");
+            Console.WriteLine("╚═══════════════════════════════╝");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    AddHen();
+                    break;
+                case "2":
+                    RemoveHen();
+                    break;
+                case "3":
+                    EditHen();
+                    break;
+                case "4":
+                    AddCoop();
+                    break;
+                case "5":
+                    RemoveCoop();
+                    break;
+                case "6":
+                    Search();
+                    break;
+                case "7":
+                    continueRunning = false;
+                    Console.WriteLine("╔═══════════════════════╗");
+                    Console.WriteLine("║ Zamykanie programu... ║");
+                    Console.WriteLine("╚═══════════════════════╝");
+                    break;
+                default:
+                    Console.WriteLine("╔═══════════════════════════════════╗");
+                    Console.WriteLine("║ Nieznana opcja. Wybierz ponownie. ║");
+                    Console.WriteLine("╚═══════════════════════════════════╝");
+                    break;
+            }
+
+            if (continueRunning)
+            {
+                Console.WriteLine("\nNaciśnij dowolny klawisz, aby kontynuować...");
+                Console.ReadKey();
+            }
         }
-
-        if (continueRunning)
+        catch (Exception ex)
         {
-            Console.WriteLine("\nNaciśnij dowolny klawisz, aby kontynuować...");
-            Console.ReadKey();
+
+            Console.WriteLine("Wystąpił błąd. Szczegóły: " + ex.Message);
+            Console.WriteLine("Wracam do menu głównego...");
+            System.Threading.Thread.Sleep(7000); 
         }
     }
 }
@@ -223,75 +216,71 @@ static void EditHen()
             case 1:
                 {
                     int new_id;
-                    string query;
                     Console.WriteLine("Podaj nowe ID kurnika: ");
                     new_id = Int32.Parse(Console.ReadLine());
-                    query = $"UPDATE kury SET kury.id_kurnik = {new_id} WHERE kury.id_kury LIKE {id_kury}";
-                    
-
                     con.CreateConnection();
-                    con.UpdateKura(query);
+                    con.UpdateKura(id_kury,1,new_id);
                     con.CloseConnection();
                     break;
                 }
             case 2:
                 {
-                    Console.WriteLine("aktualnie funkcja nie dostępna, przepraszam");
-                    Thread.Sleep(2000);
-                    //string new_gender;
-                    //string query;
-                    //Console.WriteLine("Wpisz nową płeć dla kury: (wpisz kura lub kogut");
-                    //string verify = Console.ReadLine();
-                    //if (verify == "kura" || verify == "kogut")
-                    //{
-                    //    new_gender = verify;
-                    //}
-                    //else
-                    //{
-                    //    Console.WriteLine("Ups, podałeś złą wartość, zacznij od nowa");
-                    //    return;
-                    //}
-                    //query = $"UPDATE kury SET kury.plec = {new_gender} WHERE kury.id_kury LIKE {id_kury}";
-                    //con.CreateConnection();
-                    //con.UpdateKura(query);
-                    //con.CloseConnection();
+
+                    string new_gender;
+                    Console.WriteLine("Wpisz nową płeć dla kury: (wpisz kura lub kogut");
+                    string verify = Console.ReadLine();
+                    if (verify == "kura" || verify == "kogut")
+                    {
+                        new_gender = verify;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ups, podałeś złą wartość, zacznij od nowa");
+                        return;
+                    }
+                    con.CreateConnection();
+                    con.UpdateKura(id_kury,2,new_gender);
+                    con.CloseConnection();
 
                     break;
                 }
             case 3:
                 {
 
-                    int? new_eggs;
-                    string query;
+                    int new_eggs;
+                    string new_eggsS;
                     Console.WriteLine("Podaj nową ilość zniesionych jaj: (aby ustawić wartość NULL, wciśnij enter) ");
 
                     string input = Console.ReadLine();
                     if (int.TryParse(input, out int parsedValue))
                     {
                         new_eggs = parsedValue;
-                        query = $"UPDATE kury SET kury.zniesione_jaja = {new_eggs} WHERE kury.id_kury LIKE {id_kury}";
+
+                        con.CreateConnection();
+                        con.UpdateKura(id_kury,3,new_eggs);
+                        con.CloseConnection();
+
                     }
                     else
                     {
-                        new_eggs = null;
-                        query = $"UPDATE kury SET kury.zniesione_jaja = NULL WHERE kury.id_kury LIKE {id_kury}";
+                        new_eggsS = "NULL";
+
+                        con.CreateConnection();
+                        con.UpdateKura(id_kury,3,new_eggsS);
+                        con.CloseConnection();
                     }
 
-                    con.CreateConnection();
-                    con.UpdateKura(query);
-                    con.CloseConnection();
+
                     break;
                 }
             case 4:
                 {
                     double new_weight;
-                    string query;
+
                     Console.WriteLine("Podaj nową wagę kury: ( w formacie 1,5   2,5 itd.");
                     new_weight = double.Parse(Console.ReadLine());
-                    query = $"UPDATE kury SET kury.waga = {new_weight} WHERE kury.id_kury LIKE {id_kury}";
-
                     con.CreateConnection();
-                    con.UpdateKura(query);
+                    con.UpdateKura(id_kury,4,new_weight);
                     con.CloseConnection();
                     break;
                 }
@@ -316,18 +305,27 @@ static void AddCoop()
     Console.WriteLine("Podaj miasto w którym znajduje się kurnik: ");
     lokalizacja = Console.ReadLine();
 
+    if (string.IsNullOrEmpty(nazwa) || string.IsNullOrEmpty(lokalizacja))
+        {
+        Console.WriteLine("Nazwa i lokalizacja nie mogą być puste!");
+        return;
+        }
+    else
+    {
+        Kurnik temp_kurnik = new Kurnik(nazwa, lokalizacja);
 
-    kurnik temp_kurnik = new kurnik(nazwa, lokalizacja);
+        dbConnect con = new dbConnect();
+        con.CreateConnection();
+        con.InsertKurnik(temp_kurnik);
+        con.CloseConnection();
 
-    dbConnect con = new dbConnect();
-    con.CreateConnection();
-    con.InsertKurnik(temp_kurnik);
-    con.CloseConnection();
+        Console.WriteLine("╔══════════════════════╗");
+        Console.WriteLine("║ Dodano kurnik...     ║");
+        Console.WriteLine("╚══════════════════════╝");
+        // Tutaj możesz dodać logikę dodawania kurnika do bazy danych
+    }
 
-    Console.WriteLine("╔══════════════════════╗");
-    Console.WriteLine("║ Dodano kurnik...     ║");
-    Console.WriteLine("╚══════════════════════╝");
-    // Tutaj możesz dodać logikę dodawania kurnika do bazy danych
+
 }
 
 static void RemoveCoop()
